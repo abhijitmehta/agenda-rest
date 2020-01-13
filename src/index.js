@@ -71,6 +71,12 @@ router.post('/api/job/every', runJobEvery);
 router.post('/api/job/now', runJobNow);
 router.post('/api/job/cancel', cancelJobs);
 
+router.get('/', (ctx, next) => {
+    ctx.body = 'Live!';
+  });
+
+
+
 const redirect = (route, status = 307) => async (ctx, next) => {
   ctx.status = status;
   ctx.redirect(route);
@@ -89,3 +95,6 @@ router.post('/api/v1/job/cancel', redirect('/api/job/cancel'));
 
 export {app, router, agenda, jobsReady};
 export default app;
+
+
+
