@@ -67,7 +67,7 @@
     "request-promise": "^4.2.4"
   },
   "engines": {
-    "node": ">=8"
+    "node": "12.x"
   },
   "xo": {
     "space": 2,
