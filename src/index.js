@@ -3,6 +3,8 @@ import Agenda from 'agenda';
 import settings from '../settings';
 import {bootstrapKoaApp} from './util';
 import {defineJob, jobOperations, jobAssertions, promiseJobOperation} from './job';
+import serverless from 'serverless-http' ; 
+
 
 const {app, router} = bootstrapKoaApp();
 
@@ -94,7 +96,7 @@ router.post('/api/v1/job/now', redirect('/api/job/now'));
 router.post('/api/v1/job/cancel', redirect('/api/job/cancel'));
 
 export {app, router, agenda, jobsReady};
-export default app;
+export default serverless(app);
 
 
 
